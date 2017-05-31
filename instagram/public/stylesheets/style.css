@@ -28,8 +28,41 @@ html, body {
   border-radius: 1px
   margin: 0 0 10px;
   padding: 10px 0;
+  text-align: center;
 }
 
 .main-section-form, .main-section-image {
    padding: 0px;
+}
+
+p.sign-up {
+  font-size: 17px;
+  line-height: 20px;
+  margin: 0 40px 10px;
+  text-align: center;
+  color: #999;
+  font-weight: 600;
+}
+
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+button.signup-button {
+  background: #3897f0;
+  border-color: #3897f0;
+  color: white;
+  -webkit-appearance: none;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 26px;
+  outline: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
 }
