@@ -65,4 +65,29 @@ button.signup-button {
   white-space: nowrap;
   width: 80%;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  margin-bottom: 20px;
+}
+
+.sign-up-field {
+    background: 0 0;
+    border: 1px solid #efefef;
+    border-radius: 3px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #262626;
+    font-size: 14px;
+    padding: 9px 8px 7px;
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+.form.signup-form {
+    text-align: center;
+}
+
+.form-group {
+  width: 80%;
+}
+.form-group input{
+  margin-left: 40px;
 }
