@@ -117,5 +117,6 @@ button.signup-button {
 }
 
 .search > form > input {
-  width: 70%;
+  width: 100%;
+  
 }
