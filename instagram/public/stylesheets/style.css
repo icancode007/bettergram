@@ -97,7 +97,6 @@ button.signup-button {
   font-size: 30px;
 }
 .logo,.search,.userIcons{
-  border:2px solid red;
   width: 400px;
   height: 70px;;
 }
@@ -107,16 +106,17 @@ button.signup-button {
   height: 40px;
   border-left: 2px solid black;
   margin-left: 15px;
-  margin-top: 10px;
 }
 
 
 .main_logo_text {
   padding-left: 2px;
-  margin-top: 10px;
 }
 
 .search > form > input {
-  width: 100%;
-  
+  width: 250px;
+}
+
+.userIcons {
+ color: #666666;
 }

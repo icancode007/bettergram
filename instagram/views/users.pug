@@ -1,7 +1,7 @@
 extends layout
 block content
   nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.d-flex.justify-content-center
-    div.logo.d-flex.justify-content-center
+    div.logo.d-flex.justify-content-center.align-items-center
       div.main-logo
         i.fa.fa-instagram.fa-2x(aria-hidden='true')
       div.main-logo-line
@@ -11,7 +11,10 @@ block content
       form.bd-search.hidden-sm-down
         input#search-input.form-control(type='text', placeholder='Search...', autocomplete='off')
         #search-results.dropdown-menu.bd-search-results
-    div.userIcons
+    div.userIcons.d-flex.justify-content-around.align-items-center
+      i.fa.fa-compass(aria-hidden='true')
+      i.fa.fa-heart-o(aria-hidden='true')
+      i.fa.fa-user-o(aria-hidden='true')
 
       
     
