@@ -1,14 +1,17 @@
 extends layout
 block content
-  nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-    button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-      span.navbar-toggler-icon 
-    div.cont
-      div
-        p hey
-      div
-        p hey
-      div
-        p hey
+  nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.d-flex.justify-content-center
+    div.logo.d-flex.justify-content-center
+      div.main-logo
+        i.fa.fa-instagram.fa-2x(aria-hidden='true')
+      div.main-logo-line
+      div.main_logo_text
+        img(src='images/logo.png', height='50', width='150')
+    div.search
+      form.bd-search.hidden-sm-down
+        input#search-input.form-control(type='text', placeholder='Search...', autocomplete='off')
+        #search-results.dropdown-menu.bd-search-results
+    div.userIcons
+
       
     

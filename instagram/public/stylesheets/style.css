@@ -98,6 +98,24 @@ button.signup-button {
 }
 .logo,.search,.userIcons{
   border:2px solid red;
-  width: 150px;
+  width: 400px;
   height: 70px;;
+}
+
+.main-logo-line {
+  width: 10px;
+  height: 40px;
+  border-left: 2px solid black;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+
+.main_logo_text {
+  padding-left: 2px;
+  margin-top: 10px;
+}
+
+.search > form > input {
+  width: 70%;
 }
