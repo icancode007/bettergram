@@ -1,20 +1,19 @@
 extends layout
 block content
-  nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.d-flex.justify-content-center
-    div.logo.d-flex.justify-content-center.align-items-center
-      div.main-logo
-        i.fa.fa-instagram.fa-2x(aria-hidden='true')
-      div.main-logo-line
-      div.main_logo_text
-        img(src='images/logo.png', height='50', width='150')
-    div.search.d-flex.justify-content-around.align-items-center
-      form.bd-search.hidden-sm-down
-        input#search-input.form-control(type='text', placeholder='Search...', autocomplete='off')
-        #search-results.dropdown-menu.bd-search-results
-    div.userIcons.d-flex.justify-content-around.align-items-center
-      i.fa.fa-compass(aria-hidden='true')
-      i.fa.fa-heart-o(aria-hidden='true')
-      i.fa.fa-user-o(aria-hidden='true')
-
+  include partials/nav
+  div.container.d-flex.justify-content-center
+    .card
+      .card-header
+        div.d-flex.justify-content-start.align-items-center
+          img.rounded-circle(src='images/wonder_woman.jpg', alt='User image')
+          p.user_name Wonder Woman
+      img.card-img-top(src='images/dog.jpg', alt='Card image cap')
+      .card-block
+        .card-title.d-flex.justify-content-start.align-items-center
+          i.fa.fa-heart-o(aria-hidden='true')
+          i.fa.fa-comment-o(aria-hidden='true')
+        p.card-text
+          | Some quick example text to build on the card title and make up the bulk of the card's content.
+        a.btn.btn-primary(href='#') Go somewhere
       
     
