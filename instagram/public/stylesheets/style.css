@@ -118,8 +118,9 @@ button.signup-button {
 }
 #search-i .fa-search{
   color:#656;
-  top:2px;
-  left:5px;
+  font-size: 15px;
+  top:8px;
+  left:45px;
   position: absolute;
 }
 #search-input{
