@@ -113,8 +113,17 @@ button.signup-button {
   padding-left: 2px;
 }
 
-.search > form > input {
-  width: 250px;
+#search-i{
+  position: relative;
+}
+#search-i .fa-search{
+  color:#656;
+  top:2px;
+  left:5px;
+  position: absolute;
+}
+#search-input{
+  padding-left: 20px;
 }
 
 .userIcons {
