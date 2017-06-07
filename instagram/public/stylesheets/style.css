@@ -113,7 +113,9 @@ button.signup-button {
 .main_logo_text {
   padding-left: 2px;
 }
-
+.fa-search{
+  margin-right:5px; 
+}
 #search-i{
   position: relative;
 }
@@ -155,4 +157,15 @@ p.user_name {
 img.rounded-circle {
   height: 40px;
   width: 40px;
+}
+.fa-heart-o{
+  font-size: 30px;
+}
+.fa-comment-o{
+  font-size: 30px;
+  margin-left: 20px;
+  margin-bottom: 2px;
+}
+.card-title{
+  margin-bottom: 15px;
 }
