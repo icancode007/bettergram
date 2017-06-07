@@ -6,9 +6,10 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.d-flex.justify-content-cen
     div.main_logo_text
       img(src='images/logo.png', height='50', width='150')
   div.search.d-flex.justify-content-around.align-items-center
-    form.bd-search.hidden-sm-down
-      input#search-input.form-control(type='text', placeholder='Search...', autocomplete='off')
-      #search-results.dropdown-menu.bd-search-results
+    label(id="search-i")
+      i(class="fa fa-search" aria-hidden="true") Search
+      input#search-input.form-control(type="text")
+    #search-results.dropdown-menu.bd-search-results
   div.userIcons.d-flex.justify-content-around.align-items-center
     i.fa.fa-cloud-upload(aria-hidden='true')
     i.fa.fa-heart-o(aria-hidden='true')
