@@ -114,7 +114,7 @@ button.signup-button {
   padding-left: 2px;
 }
 .fa-search{
-  margin-right:5px; 
+  margin-right:5px;
 }
 #search-i{
   position: relative;
@@ -141,8 +141,8 @@ button.signup-button {
 }
 
 .card-img-top {
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 p.user_name {
