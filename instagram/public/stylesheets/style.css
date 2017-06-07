@@ -105,6 +105,7 @@ button.signup-button {
   width: 10px;
   height: 40px;
   border-left: 2px solid black;
+  border-width: thin;
   margin-left: 15px;
 }
 
