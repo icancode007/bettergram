@@ -13,12 +13,11 @@ block content
           | Some quick example text to build on the card title and make up the bulk of the card's content.
         .card-title
           i.fa.fa-heart-o(aria-hidden='true')
-          button(type="button",class="btn-com",onclick="commentboxshow()")
+          button(type="button",class="btn-comment",onclick="commentboxshow()")
             i.fa.fa-comment-o(aria-hidden='true')
-          #targ.collapse.in
-            form(method="post")
-              .form-group
-                textarea(rows="4" cols="50" id="textarea") type your comment in here
-                button(type="submit" value="comment",class="btn-info") send
-      
+        #targ
+          form(method="post" class="form-text")
+            .form-group
+              textarea(rows="7",cols="50",id="image-comment",style="height: 50px;",placeholder='Add a comment....')
+        
     

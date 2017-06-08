@@ -178,13 +178,16 @@ img.rounded-circle {
 .card-title{
   margin-bottom: 15px;
 }
-.btn-com {
+.btn-comment {
      background-color:inherit;
      color:none;
      border: none;
 
 }
-button:focus{
+
+
+button:hover{
+  cursor: pointer;
   outline:0;
 }
 #textarea{
@@ -202,4 +205,17 @@ button:focus{
 }
 .btn-info{
   margin-left: 165px;
+}
+
+
+#image-comment {
+  background: 0 0;
+  border: none;
+  color: #262626;
+  font-size: inherit;
+  outline: none;
+  padding: 0;
+  resize: none;
+  max-height: 80px;
+  background-color : #efefef;
 }
