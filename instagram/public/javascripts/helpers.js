@@ -1,4 +1,7 @@
 $('#targ').hide();
+$(".form-areatwo").hide();
+$(".form-areathree").hide();
+
 $('#search-input').focus(function(){
   var hey = $(".fa-search");
   hey.hide();
@@ -14,3 +17,14 @@ function commentboxshow(){
 $("#textarea").focus(function(){
   var text = $("#textarea").val("");
 })
+
+function formchanger(){
+  let formsignup = $(".form-area");
+  formsignup.hide();
+  $(".form-areatwo").show();
+  $(".form-areathree").show();
+}
+
+function formundo(){
+
+}

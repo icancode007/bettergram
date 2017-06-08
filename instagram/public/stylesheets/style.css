@@ -20,18 +20,35 @@ html, body {
   margin-top: 50px;
 }
 
-.form-area {
+.form-area{
   height: 500px;
   width: 400px;
   background-color: white;
   border: 1px solid #e6e6e6;
   border-radius: 1px
-  margin: 0 0 10px;
+  margin: 0 0 10px 10px;
   padding: 10px 0;
   text-align: center;
 }
-.form-area{
-  margin-bottom: 10px;
+.form-areatwo{
+  height: 300px;
+  width: 400px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px
+  margin: 0 0 10px 10px;
+  padding: 10px 0;
+  text-align: center;
+}
+.form-areathree{
+  height: 80px;
+  width: 400px;
+  background-color: white;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px
+  margin: 0 0 10px 10px;
+  padding: 10px 0;
+  text-align: center;
 }
 #overide{
   height: 80px;
