@@ -1,0 +1,24 @@
+extends layout
+block content
+  include partials/nav
+  div.container.d-flex.justify-content-center
+    .card
+      .card-header
+        div.d-flex.justify-content-start.align-items-center
+          img.rounded-circle(src='images/wonder_woman.jpg', alt='User image')
+          p.user_name WonderWoman
+      img.card-img-top.image-responsive(src='images/wonder_woman_kickass.jpg', alt='Card image cap')
+      .card-block
+        p.card-text
+          | Some quick example text to build on the card title and make up the bulk of the card's content.
+        .card-title
+          i.fa.fa-heart-o(aria-hidden='true')
+          button(type="button",class="btn-com",onclick="commentboxshow()")
+            i.fa.fa-comment-o(aria-hidden='true')
+          #targ.collapse.in
+            form(method="post")
+              .form-group
+                textarea(rows="4" cols="50" id="textarea") type your comment in here
+                button(type="submit" value="comment",class="btn-info") send
+      
+    
