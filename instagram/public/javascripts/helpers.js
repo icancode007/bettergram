@@ -1,4 +1,7 @@
 $('#targ').hide();
+$('.form-areatwo').hide();
+$('.form-areathree').hide();
+
 $('#search-input').focus(function(){
   var hey = $(".fa-search");
   hey.hide();
