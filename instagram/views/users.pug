@@ -9,11 +9,16 @@ block content
           p.user_name WonderWoman
       img.card-img-top.image-responsive(src='images/wonder_woman_kickass.jpg', alt='Card image cap')
       .card-block
-        .card-title.d-flex.justify-content-start.align-items-center
-          i.fa.fa-heart-o(aria-hidden='true')
-          i.fa.fa-comment-o(aria-hidden='true')
         p.card-text
           | Some quick example text to build on the card title and make up the bulk of the card's content.
-        a.btn.btn-primary(href='#') Go somewhere
+        .card-title
+          i.fa.fa-heart-o(aria-hidden='true')
+          button(type="button",class="btn-com",onclick="commentboxshow()")
+            i.fa.fa-comment-o(aria-hidden='true')
+          #targ.collapse.in
+            form(method="post")
+              .form-group
+                textarea(rows="4" cols="50" id="textarea") type your comment in here
+                button(type="submit" value="comment",class="btn-info") send
       
     
