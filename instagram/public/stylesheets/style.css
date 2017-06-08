@@ -21,7 +21,7 @@ html, body {
 }
 
 .form-area {
-  height: 600px;
+  height: 500px;
   width: 400px;
   background-color: white;
   border: 1px solid #e6e6e6;
@@ -30,7 +30,15 @@ html, body {
   padding: 10px 0;
   text-align: center;
 }
-
+.form-area{
+  margin-bottom: 10px;
+}
+#overide{
+  height: 80px;
+}
+#overidesign{
+  height: 250px;
+}
 .main-section-form, .main-section-image {
    padding: 0px;
 }
@@ -186,7 +194,8 @@ button:focus{
   border-style: solid;
   border-color: lightblue;
   border-width: thick;
-  border-radius: 20px
+  border-radius: 20px;
+  margin-right: 20px;
 }
 #textarea:focus{
   outline: 0;
