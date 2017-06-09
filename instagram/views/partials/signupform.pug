@@ -2,13 +2,13 @@ img(src='images/logo.png', height='80', width='150')
 p.sign-up Sign up to see photos and videos from your friends.
 button.signup-button(onclick="formchanger()") Log in 
 p.formcont
-  form.signup-form
+  form.signup-form(method='post', action='/')
     .form-group
-      input.sign-up-field#InputEmail.form-control(type='email', placeholder='Mobile Number or Email')
+      input.sign-up-field#InputEmail.form-control(name='email',type='email', placeholder='Mobile Number or Email')
     .form-group
-      input.sign-up-field#Inputfirstname.form-control(type='text', placeholder='First Name')
+      input.sign-up-field#Inputfirstname.form-control(name='first_name',type='text', placeholder='First Name')
     .form-group
-      input.sign-up-field#Inputlastname.form-control(type='text', placeholder='Last Name')
+      input.sign-up-field#Inputlastname.form-control(name='last_name',type='text', placeholder='Last Name')
     .form-group
-      input.sign-up-field#exampleInputPassword1.form-control(type='password', placeholder='Password')
+      input.sign-up-field#exampleInputPassword1.form-control(name='password',type='password', placeholder='Password')
     button.signup-button(type='submit') Sign Up
