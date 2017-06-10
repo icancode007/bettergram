@@ -22,7 +22,7 @@ html, body {
 }
 
 .form-area{
-  height: 500px;
+  height: 525px;
   width: 400px;
   background-color: white;
   border: 1px solid #e6e6e6;
@@ -117,7 +117,12 @@ button.signup-button {
 .form-group input{
   margin-left: 40px;
 }
-/* USERS */
+.errorsList{
+  list-style: none;
+  color:red;
+  font-size: bold;
+}
+                                    /* USERS */
 .navbar {
   height: 100px;
   font-size: 30px;

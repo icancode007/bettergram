@@ -4,11 +4,12 @@ button.signup-button(onclick="formchanger()") Log in
 p.formcont
   form.signup-form(method='post', action='/')
     .form-group
-      input.sign-up-field#InputEmail.form-control(name='email',type='email', placeholder='Mobile Number or Email')
+      input.sign-up-field#InputEmail.form-control(name='email',type='email', placeholder='Email',value=user.email)
     .form-group
-      input.sign-up-field#Inputfirstname.form-control(name='first_name',type='text', placeholder='First Name')
+      input.sign-up-field#Inputusername.form-control(name='username',type='text', placeholder='Username',value=user.username)
     .form-group
-      input.sign-up-field#Inputlastname.form-control(name='last_name',type='text', placeholder='Last Name')
+      input.sign-up-field#Inputphonenumber.form-control(name='phonenumber',type='text', placeholder='Phone Number',value=user.phonenumber)
     .form-group
       input.sign-up-field#exampleInputPassword1.form-control(name='password',type='password', placeholder='Password')
+    include errores
     button.signup-button(type='submit') Sign Up
