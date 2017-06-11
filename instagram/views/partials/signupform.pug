@@ -1,14 +1,17 @@
 img(src='images/logo.png', height='80', width='150')
 p.sign-up Sign up to see photos and videos from your friends.
-button.signup-button Log in with Facebook
+
+a(href="/signin")
+  button.signup-button Sign In  
 p.formcont
-  form.signup-form
+  form.signup-form(method='post', action='/')
     .form-group
-      input.sign-up-field#InputEmail.form-control(type='email', placeholder='Mobile Number or Email')
+      input.sign-up-field#InputEmail.form-control(name='email',type='email', placeholder='Email',value=user.email)
     .form-group
-      input.sign-up-field#Inputfirstname.form-control(type='text', placeholder='First Name')
+      input.sign-up-field#Inputusername.form-control(name='username',type='text', placeholder='Username',value=user.username)
     .form-group
-      input.sign-up-field#Inputlastname.form-control(type='text', placeholder='Last Name')
+      input.sign-up-field#Inputphonenumber.form-control(name='phonenumber',type='text', placeholder='Phone Number',value=user.phonenumber)
     .form-group
-      input.sign-up-field#exampleInputPassword1.form-control(type='password', placeholder='Password')
+      input.sign-up-field#exampleInputPassword1.form-control(name='password',type='password', placeholder='Password')
+    include errores
     button.signup-button(type='submit') Sign Up

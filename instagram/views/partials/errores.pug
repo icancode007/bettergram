@@ -1,0 +1,5 @@
+if errors
+  .form-group
+      ul.errorsList
+        each error in errors
+          li(class='fila')= error.message 
