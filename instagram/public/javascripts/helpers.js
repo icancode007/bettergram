@@ -1,6 +1,6 @@
 $('#targ').hide();
-$('.form-areatwo').hide();
-$('.form-areathree').hide();
+// $('.form-areatwo').hide();
+// $('.form-areathree').hide();
 
 $('#search-input').focus(function(){
   var hey = $(".fa-search");
@@ -19,12 +19,8 @@ $("#textarea").focus(function(){
 })
 
 function formchanger(){
-  let formsignup = $(".form-area");
-  formsignup.hide();
-  $(".form-areatwo").show();
-  $(".form-areathree").show();
-}
-
-function formundo(){
-
+  // let formsignup = $(".form-area");
+  // formsignup.hide();
+  // $(".form-areatwo").show();
+  // $(".form-areathree").show();
 }

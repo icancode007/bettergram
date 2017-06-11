@@ -1,33 +1,36 @@
 var express = require('express');
 var passport = require('passport');
-var local = require('passport-local');
+var local    = require('passport-local');
 var bcrypt = require('bcrypt');
 var models = require('../models/index');
 var User = models.user;
 var router = express.Router();
 
-/* GET home page. */
+
+/* create the middleware strategy for the passport*/
 passport.use(
-  new local.Strategy(
-  function(email,password,done){
-    User.findOne({
-      where:  {
-        email: email
-      }
-    }).then(function(user){
-      if(!user)
-        return(done(null,false,{msg: 'No users whre found under that address, try again'}));
-      else{
-        bcrypt.compare(password, user.password, function(error,result){
-          if(result)
-            return(done(null, user));
-          else
-            return(done(null, false,{message: 'Incorrect password, try again'}));
-        });
-      }
-    });
-  }
-))
+	new local.Strategy(
+		function(email, password, done) {
+	    User.findOne({
+				where: {
+					email: email
+				}
+			}).then(function(user) {
+        console.log(user)
+	      if (!user)
+	        return(done(null, false, {message: 'A user with that email does not exist.'}));
+	      else {
+					bcrypt.compare(password, user.password, function(error, result) {
+						if (result)
+				      return(done(null, user));
+						else
+			        return(done(null, false, {message: 'Incorrect password.'}));
+        	});
+				}
+	    });
+	  }
+	)
+);
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
@@ -37,18 +40,18 @@ passport.deserializeUser(function(id, done) {
     done(null, user);
   });
 });
+/* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
       user:{}
   });
 });
-
 router.post('/',function(req,res){
-  bcrypt.hash(req.body.password,10, function(error,password){
+  bcrypt.hash(req.body.password, 10, function(error,password){
     User.create({
         username: req.body.username,
         phonenumber: req.body.phonenumber,
-        password: req.body.password,
+        password: password,
         email: req.body.email
     }).then(function(user){
         req.login(user, function(error) {
@@ -61,5 +64,13 @@ router.post('/',function(req,res){
       });
     });
   });
+});
+
+/* Get to the sign in page*/
+router.get('/signin',function(req, res, next){
+  res.render('signin');
+});
+router.post('/signin', passport.authenticate('local'), function(req,res) {
+  res.redirect('/users');
 });
 module.exports = router;
