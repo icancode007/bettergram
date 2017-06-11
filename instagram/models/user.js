@@ -92,7 +92,7 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
       }
-    }
+    } 
   });
   return(User);
 };

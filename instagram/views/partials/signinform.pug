@@ -2,7 +2,7 @@ img(src='images/logo.png', height='80', width='150')
 p.formcont
   form.signup-form(action='/signin', method='post')
     .form-group
-      input.user_name-field#Inputusername.form-control(name='email' type='email', placeholder='Username')
+      input.user_name-field#Inputusername.form-control(name='username' type='text', placeholder='Username')
     .form-group
       input.password-field#Inputpassword.form-control(name='password', type='password', placeholder='Password')
     include errores

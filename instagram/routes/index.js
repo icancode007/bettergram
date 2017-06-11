@@ -10,10 +10,10 @@ var router = express.Router();
 /* create the middleware strategy for the passport*/
 passport.use(
 	new local.Strategy(
-		function(email, password, done) {
+		function(username, password, done) {
 	    User.findOne({
 				where: {
-					email: email
+					username: username
 				}
 			}).then(function(user) {
         console.log(user)
@@ -70,6 +70,7 @@ router.post('/',function(req,res){
 router.get('/signin',function(req, res, next){
   res.render('signin');
 });
+/* problems right here with the passport.authenticate, it kept returning bad request */
 router.post('/signin', passport.authenticate('local'), function(req,res) {
   res.redirect('/users');
 });
