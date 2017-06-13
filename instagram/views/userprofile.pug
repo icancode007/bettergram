@@ -1,0 +1,31 @@
+extends layout
+block content
+  include partials/nav
+  .row.main-section.userprofile
+    .col-md-4.d-flex.justify-content-end
+      p #{currentUser.imgUrl}
+    .col-md-8
+      .col-md-2.ordenado
+        h3 #{currentUser.username} 
+        button(type="button", class="btn btn-info btn-lg", data-toggle="modal", data-target="#myModal") edit profile
+        #myModal.modal.fade(role='dialog')
+          .modal-dialog
+            // Modal content
+            .modal-content
+              .modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title Pofile Pic/Bio
+              .modal-body
+                form(action=`/users/${currentUser.username}`, method='post',enctype='multipart/form-data')
+                  .form-group
+                    label(for='bio') bio
+                    input.form-control(name='bio',type='text')
+                  .form-group
+                    label(for='image') Image
+                    input.form-control(name='image',type='file')
+                  .form-group
+                    input(type='submit')
+              .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
+      .col-md-2.ordenado
+        p #{currentUser.bio}    

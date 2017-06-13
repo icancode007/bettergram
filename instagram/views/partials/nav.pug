@@ -4,7 +4,7 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.d-flex.justify-content-cen
       i.fa.fa-instagram.fa-2x(aria-hidden='true')
     div.main-logo-line
     div.main_logo_text
-      img(src='images/logo.png', height='50', width='150')
+      img(src='/images/logo.png', height='50', width='150')
   div.search.d-flex.justify-content-around.align-items-center
     label(id="search-i")
       i(class="fa fa-search" aria-hidden="true") ...Search
@@ -13,4 +13,6 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.d-flex.justify-content-cen
   div.userIcons.d-flex.justify-content-around.align-items-center
     i.fa.fa-camera-retro(aria-hidden="true")
     i.fa.fa-heart-o(aria-hidden='true')
-    i.fa.fa-user-o(aria-hidden='true')  #{currentUser.username}
+    a(href=`/users/${currentUser.username}`)
+      i.fa.fa-user-o(aria-hidden='true')  
+    h5(class="userlink") @ #{currentUser.username}

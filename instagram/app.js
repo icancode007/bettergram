@@ -34,8 +34,6 @@ app.locals.date = function(date){
 }
 //passport helper of currentuser data using db
 app.use(function(req,res,next){
-  console.log('req, req.user')
-    console.log(req,req.user);
     res.locals.currentUser = req.user;
     next();
 });

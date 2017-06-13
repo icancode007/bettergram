@@ -16,7 +16,6 @@ passport.use(
 					username: username
 				}
 			}).then(function(user) {
-        console.log(user)
 	      if (!user)
 	        return(done(null, false, {message: 'A user with that email does not exist.'}));
 	      else {

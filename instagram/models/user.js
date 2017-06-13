@@ -76,6 +76,10 @@ module.exports = function(sequelize, DataTypes) {
         }
       }
     },
+    bio:{
+      type:DataTypes.STRING
+    }
+    ,
     password:
     {
       type:  DataTypes.STRING,
@@ -91,8 +95,19 @@ module.exports = function(sequelize, DataTypes) {
     classMethods: {
       associate: function(models) {
         // associations can be defined here
-      }
-    } 
+      },
+       getterMethods: {
+			      url: function() {
+				          return(`/users/${this.username}`);
+			             },
+            imgUrl: function(){
+                return(`https://s3.amazonaws.com/instaclone-june-2017/pics/${this.id}`);
+            },
+            imgThumb: function(){
+                return(`${this.imgUrl}-thumbnail`);
+            }
+    }
+  }
   });
   return(User);
 };

@@ -231,7 +231,6 @@ button:hover{
   margin-left: 165px;
 }
 
-
 #image-comment {
   background: 0 0;
   border: none;
@@ -243,4 +242,17 @@ button:hover{
   max-height: 80px;
   background-color : #efefef;
   padding: 5px;
+}
+                                    /*USER'S PROFILE*/
+
+.userlink{
+  font-size: 15px;
+  font-family: 'Indie Flower', cursive;
+}
+.ordenado{
+  display: flex;
+  justify-content:space-between;
+}
+.userprofile{
+  border-bottom-style: ridge;
 }
