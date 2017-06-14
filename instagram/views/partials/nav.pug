@@ -11,7 +11,8 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.d-flex.justify-content-cen
       input#search-input.form-control(type="text")
     #search-results.dropdown-menu.bd-search-results
   div.userIcons.d-flex.justify-content-around.align-items-center
-    i.fa.fa-camera-retro(aria-hidden="true")
+    a(href='/users')
+      i.fa.fa-camera-retro(aria-hidden="true")
     i.fa.fa-heart-o(aria-hidden='true')
     a(href=`/users/${currentUser.username}`)
       i.fa.fa-user-o(aria-hidden='true')  
