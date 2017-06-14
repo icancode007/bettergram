@@ -43,6 +43,7 @@ router.post('/:username', uploadHandler.single('image'), function(req, res) {
                         .withoutEnlargement()
                         .toBuffer()
                         .then(function(thumbnail) {
+                          console.log(req.file.mimetype)
                           console.log(`users/${user.id}`);
                             s3.upload({
                                 Bucket: 'instaclone-june-2017',
