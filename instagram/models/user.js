@@ -102,7 +102,7 @@ module.exports = function(sequelize, DataTypes) {
 				          return(`/users/${this.username}`);
 			             },
             imgUrl: function(){
-                return(`https://s3.amazonaws.com/instaclone-june-2017/pics/${this.id}`);
+                return(`https://res.cloudinary.com/diqhgzinu/image/upload/c_scale,w_153/v1497443283/d3rrhs2o37sujgbecvwc.jpg/${this.id}`);
             },
             imgThumb: function(){
                 return(`${this.imgUrl}-thumbnail`);

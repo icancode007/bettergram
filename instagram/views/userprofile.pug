@@ -3,7 +3,8 @@ block content
   include partials/nav
   .row.main-section.userprofile
     .col-md-4.d-flex.justify-content-end
-      p #{currentUser.imgUrl}
+      p 
+        img(src='/images/profileicon',height='80px',width='80px', id='imgprev')
     .col-md-8
       .col-md-2.ordenado
         h3 #{currentUser.username} 
@@ -22,7 +23,7 @@ block content
                     input.form-control(name='bio',type='text')
                   .form-group
                     label(for='image') Image
-                    input.form-control(name='image',type='file')
+                    input.form-control(name='image',type='file',id='file-upload')
                   .form-group
                     input(type='submit')
               .modal-footer
