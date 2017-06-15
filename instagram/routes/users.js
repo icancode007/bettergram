@@ -1,13 +1,17 @@
 var express = require('express');
 var multer = require('multer');
 var sharp = require('sharp');
-var aws = require('aws-sdk');
 var models = require('../models/index');
 var User = models.user;
 var uploadHandler = multer();
-var s3 = new aws.S3({
-    region: 'us-east-1'
+
+cloudinary.config({ 
+  cloud_name: 'diqhgzinu', 
+  api_key: '861668197961751', 
+  api_secret: 'LtbjNc1kVDWszRQ9UYYWrBERL0s' 
 });
+
+
 var router = express.Router();
 
 router.get('/', function(req, res) {
@@ -31,7 +35,6 @@ router.post('/:username', uploadHandler.single('image'), function(req, res) {
                 where: {
                     username: req.params.username
                 }
-            // User.create({username: req.params.username
             }).then(function(user) {
               console.log("user :" + user);
                 user.update({
@@ -43,27 +46,7 @@ router.post('/:username', uploadHandler.single('image'), function(req, res) {
                         .withoutEnlargement()
                         .toBuffer()
                         .then(function(thumbnail) {
-                          console.log(req.file.mimetype)
-                          console.log(`users/${user.id}`);
-                            s3.upload({
-                                Bucket: 'instaclone-june-2017',
-                                Key: 'hello',
-                                Body: req.file.buffer,
-                                ACL: 'public-read',
-                                ContentType: req.file.mimetype
-                            }, function(error, data) {
-                                console.log(data);
-                                console.log("error1 is: " + error)
-                                // s3.upload({
-                                //   Bucket: 'instaclone-june-2017',
-                                //   Key:  `users/${user.id}-thumbnail`,
-                                //   Body: thumbnail,
-                                //   ACL: 'public-read',
-                                //   ContentType: req.file.mimetype
-                                // }, function(error, data) {
-                                res.redirect(user.url)
-                                // });
-                            });
+                            
                         });
                     });
                 }).catch(function(error) {
