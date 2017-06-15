@@ -4,11 +4,13 @@ block content
   .row.main-section.userprofile
     .col-md-4.d-flex.justify-content-end
       p 
-        img(src='/images/profileicon',height='80px',width='80px', id='imgprev')
+        img(src=user.imgThumb, id='profileicon')
     .col-md-8
       .col-md-2.ordenado
-        h3 #{currentUser.username} 
-        button(type="button", class="btn btn-info btn-lg", data-toggle="modal", data-target="#myModal") edit profile
+        h3(class="Uname") #{currentUser.username} 
+        button(type="button", class="btn btn-info btn-md",id='btn', data-toggle="modal", data-target="#myModal") edit profile   
+        | 
+        i(class="fa fa-cogs" aria-hidden="true" id='iconSetting')
         #myModal.modal.fade(role='dialog')
           .modal-dialog
             // Modal content

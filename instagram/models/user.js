@@ -80,6 +80,10 @@ module.exports = function(sequelize, DataTypes) {
       type:DataTypes.STRING
     }
     ,
+    imageurl:{
+      type:DataTypes.STRING
+    }
+    ,
     password:
     {
       type:  DataTypes.STRING,
@@ -96,19 +100,20 @@ module.exports = function(sequelize, DataTypes) {
       associate: function(models) {
         // associations can be defined here
         models.user.hasMany(models.post);
+      }
+    },
+    getterMethods: {
+      url: function() {
+            return(`/users/${this.username}`);
+              },
+      imgUrl: function(){
+          return(`https://s3.amazonaws.com/instaclone-june-2017/users/${this.id}`);
       },
-       getterMethods: {
-			      url: function() {
-				          return(`/users/${this.username}`);
-			             },
-            imgUrl: function(){
-                return(`https://res.cloudinary.com/diqhgzinu/image/upload/c_scale,w_153/v1497443283/d3rrhs2o37sujgbecvwc.jpg/${this.id}`);
-            },
-            imgThumb: function(){
-                return(`${this.imgUrl}-thumbnail`);
-            }
-    }
-  }
+      imgThumb: function(){
+          return(`${this.imgUrl}-thumbnail`);
+        }
+      }
+    
   });
   return(User);
 };

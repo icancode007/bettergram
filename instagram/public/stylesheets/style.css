@@ -256,3 +256,21 @@ button:hover{
 .userprofile{
   border-bottom-style: ridge;
 }
+#profileicon{
+  border-radius: 100px;
+  width:150px;
+  height: 150px;
+}
+.Uname{
+   font-size: 25px;
+   font-family: 'Indie Flower', cursive;
+   margin-right: -140px;
+   margin-left: 40px;
+}
+/*#btn:hover{
+  color:#0275d8;
+}*/
+#iconSetting{
+  font-size:25px;
+  margin-left: 15px;
+}
