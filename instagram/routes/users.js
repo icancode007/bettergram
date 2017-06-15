@@ -5,7 +5,6 @@ var sharp = require('sharp');
 var models = require('../models/index');
 var User = models.user;
 var uploadHandler = multer();
-
 var router = express.Router();
 
 router.get('/', function(req, res) {
