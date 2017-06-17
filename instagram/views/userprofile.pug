@@ -17,11 +17,11 @@ block content
             .modal-content
               .modal-header
                 button.close(type='button', data-dismiss='modal') ×
-                h4.modal-title Pofile Pic/Bio
+                h4.modal-title Pofile Pic & Bio
               .modal-body
                 form(action=`/users/${currentUser.username}`, method='post',enctype='multipart/form-data')
                   .form-group
-                    label(for='bio') bio
+                    label(for='bio') Bio
                     input.form-control(name='bio',type='text')
                   .form-group
                     label(for='image') Image

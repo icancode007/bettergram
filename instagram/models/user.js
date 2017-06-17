@@ -1,63 +1,60 @@
-'use strict';
-module.exports = function(sequelize, DataTypes) {
+module.exports = function(sequelize,Sequelize) {
   var User = sequelize.define('user', {
-    username:
-    {
-      type:  DataTypes.STRING,
-      allowNull: false,
-      validate:  {
-        notEmpty:  {
-          msg:'Username is required'
+    username:{
+            type:  Sequelize.STRING,
+            allowNull: false,
+            validate:  {
+              notEmpty:  {
+                msg:'Username is required'
         },
         isUnique: function(value,next){
           //this is a custom made validation to check if the address is uniqu
-          var self = this;
-          User.findOne({
-            where:{
-            username:  value
-            }
+             var self = this;
+             User.findOne({
+                where:{
+                  username:  value
+              }
           }).then(function(user){
-            if(user && user.id != self.id)
+              if(user && user.id != self.id)
             //if the current validating user matches one from the  database
-              return(next('This Username is alredy taken try another one'))
-            else
-              return(next())
+                return(next('This Username is alredy taken try another one'))
+              else
+                return(next())
             });
           }
         }
       },
-    phonenumber:
-    {
-      type:  DataTypes.STRING,
-      allowNull: false,
-      validate:  {
-        notEmpty:  {
-          msg:'Phone NUmber is required'
+    phonenumber:{
+        type:  Sequelize.STRING,
+        allowNull: false,
+        validate:  {
+          notEmpty:  {
+            msg:'Phone Number is required'
         },
         isUnique: function(value,next){
           //this is a custom made validation to check if the address is uniqu
-          var self = this;
-          User.findOne({
-            where:{
-              phonenumber:  value
+            var self = this;
+            User.findOne({
+              where:{
+                phonenumber:  value
             }
           }).then(function(user){
-            if(user && user.id != self.id)
-            //if the current validating user matches one from the  database
-              return(next('This Phone Number is alredy registerted, try a different one'))
-            else
-              return(next())
+              if(user && user.id != self.id)
+              //if the current validating user matches one from the  database
+                return(next('This Phone Number is alredy registerted, try a different one'))
+              else
+                return(next())
           });
         }
       }
     },
     email:
     {
-      type:  DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        isEmail: {
-          msg: 'This Email is not valid'
+        type:  Sequelize.STRING,
+        allowNull: false,
+          validate: {
+            isEmail: {
+              msg: 'This Email is not valid'
         },
         isUnique: function(value,next){
           //this is a custom made validation to check if the address is uniqu
@@ -77,30 +74,45 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     bio:{
-      type:DataTypes.STRING
+      type:Sequelize.STRING
     }
     ,
     imageurl:{
-      type:DataTypes.STRING
+      type:Sequelize.STRING
     }
     ,
     password:
     {
-      type:  DataTypes.STRING,
+      type:  Sequelize.STRING,
       allowNull: false,
-      validate:{
-        len:{
-          args: [{min: 8}],
-          msg:  'Password length most be at least 8'
+        validate:{
+          len:{
+            args: [{min: 8}],
+            msg:  'Password length most be at least 8'
         }
       }
     }
   }, {
     classMethods: {
       associate: function(models) {
-        // associations can be defined here
-        models.user.hasMany(models.post);
-      }
+          // associations can be defined here
+          models.user.hasMany(models.post);
+      },
+        findWithUsername:function(username){
+            //anything that is under class methods is available to use for its model
+            //different from getterMethods who only lets instances of models to use it
+            return(this.findOne({
+                where:{
+                    username:username
+                },
+                include:[
+                    sequelize.models.post
+                ],
+                order:[
+                    [sequelize.models.post,'createdAt', 'DESC']
+                ] 
+            }));
+        }
     },
     getterMethods: {
       url: function() {
@@ -112,8 +124,7 @@ module.exports = function(sequelize, DataTypes) {
       imgThumb: function(){
           return(`${this.imgUrl}-thumbnail`);
         }
-      }
-    
+      } 
   });
   return(User);
 };

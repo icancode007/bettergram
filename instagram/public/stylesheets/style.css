@@ -166,8 +166,8 @@ button.signup-button {
 }
 
 .card {
-  width: 500px;
-  height: 600px;
+  width: 350px;
+  height: 400px;
   margin-top: 25px;
 }
 
@@ -243,7 +243,17 @@ button:hover{
   background-color : #efefef;
   padding: 5px;
 }
-                                    /*USER'S PROFILE*/
+#postUpload label{
+  font-size: 14px;
+  margin-left: 45px;
+}
+#postUpload input{
+  font-size: 15px;  
+}
+.container{
+  margin-bottom: 200px;
+}
+                               /*USER'S PROFILE*/
 
 .userlink{
   font-size: 15px;
@@ -266,6 +276,9 @@ button:hover{
    font-family: 'Indie Flower', cursive;
    margin-right: -140px;
    margin-left: 40px;
+}
+#mymodal{
+  font-family: 'Indie Flower', cursive;
 }
 /*#btn:hover{
   color:#0275d8;

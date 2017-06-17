@@ -15,9 +15,28 @@ block content
           i.fa.fa-heart-o(aria-hidden='true')
           button(type="button",class="btn-comment",onclick="commentboxshow()")
             i.fa.fa-comment-o(aria-hidden='true')
-        #targ
+        .targ
+          form(method="#" class="form-text")
+            .form-group
+              textarea(rows="15",cols="45",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
+  //- if post
+  each post in posts
+    div.container.d-flex.justify-content-center
+      .card
+        .card-header
+          div.d-flex.justify-content-start.align-items-center
+            img.rounded-circle(src=post.user.imgThumb, alt= 'User image')
+            p.user_name  #{post.user.username}
+        img.card-img-top.image-responsive(src=post.imgUrl, alt='Card image cap')
+        .card-block
+          p.card-text
+          |#{post.post}
+        .card-title
+          i.fa.fa-heart-o(aria-hidden='true')
+          button(type="button",class="btn-comment",onclick="commentboxshow()")
+            i.fa.fa-comment-o(aria-hidden='true')
+        .targ    
           form(method="post" class="form-text")
             .form-group
-              textarea(rows="15",cols="65",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
-        
-    
+              textarea(rows="15",cols="45",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
+      

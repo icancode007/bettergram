@@ -1,7 +1,7 @@
-module.exports = function(sequelize, Sequelize) {
+module.exports = function(sequelize, DataTypes) {
 	return(sequelize.define('post', {
 		post:{
-            type: Sequelize.STRING,
+            type: DataTypes.STRING,
             allowNull:false,
             }
 	}, {

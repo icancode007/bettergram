@@ -11,8 +11,27 @@ nav.navbar.navbar-toggleable-md.navbar-light.bg-faded.d-flex.justify-content-cen
       input#search-input.form-control(type="text")
     #search-results.dropdown-menu.bd-search-results
   div.userIcons.d-flex.justify-content-around.align-items-center
-    a(href='/users')
+    a(href='/users',data-toggle="modal", data-target='#postUpload')
       i.fa.fa-camera-retro(aria-hidden="true")
+    #postUpload.modal.fade(role='dialog')
+      .modal-dialog
+        //modall content
+        .modal-content
+          .modal-header
+            button.close(type='button',data-dismiss='modal') ×
+            h4.modal-title Post
+          .modal-body
+            form(action='/users',method='post',enctype='multipart/form-data')
+              .form-group
+                label(for=post)
+                input.form-control(name='post',type='text')
+              .form-group
+                label(for='image') Image 
+                input.form-control(name='image',type='file',id='imagefl')
+              .form-group
+                input(type='submit')
+          .modal-footer
+            button.btn.btn-default(type='button',data-dismiss='modal') Close  
     i.fa.fa-heart-o(aria-hidden='true')
     a(href=`/users/${currentUser.username}`)
       i.fa.fa-user-o(aria-hidden='true')  

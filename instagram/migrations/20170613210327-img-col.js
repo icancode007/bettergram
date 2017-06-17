@@ -2,8 +2,7 @@ module.exports = {
   up: function(queryInterface, Sequelize) {
     return(queryInterface.addColumn('users', 'imageurl', {
 			type:         Sequelize.STRING,
-			allowNull:    true,
-			defaultValue: ''
+			allowNull:    true
 		}));
   },
 

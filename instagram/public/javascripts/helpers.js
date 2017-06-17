@@ -1,4 +1,4 @@
-$('#targ').hide();
+$('.targ').hide();
 // $('.form-areatwo').hide();
 // $('.form-areathree').hide();
 
@@ -12,7 +12,7 @@ $('#search-input').blur(function(){
 })
 
 function commentboxshow(){
-  $('#targ').toggle();
+  $('.targ').toggle();
 }
 $("#textarea").focus(function(){
   var text = $("#textarea").val("");
