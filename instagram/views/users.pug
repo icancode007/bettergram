@@ -1,24 +1,24 @@
 extends layout
 block content
   include partials/nav
-  div.container.d-flex.justify-content-center
-    .card
-      .card-header
-        div.d-flex.justify-content-start.align-items-center
-          img.rounded-circle(src='/images/wonder_woman.jpg', alt='User image')
-          p.user_name WonderWoman
-      img.card-img-top.image-responsive(src='/images/wonder_woman_kickass.jpg', alt='Card image cap')
-      .card-block
-        p.card-text
-          | Some quick example text to build on the card title and make up the bulk of the card's content.
-        .card-title
-          i.fa.fa-heart-o(aria-hidden='true')
-          button(type="button",class="btn-comment",onclick="commentboxshow()")
-            i.fa.fa-comment-o(aria-hidden='true')
-        .targ
-          form(method="#" class="form-text")
-            .form-group
-              textarea(rows="15",cols="45",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
+  //- div.container.d-flex.justify-content-center
+  //-   .card
+  //-     .card-header
+  //-       div.d-flex.justify-content-start.align-items-center
+  //-         img.rounded-circle(src='/images/wonder_woman.jpg', alt='User image')
+  //-         p.user_name WonderWoman
+  //-     img.card-img-top.image-responsive(src='/images/wonder_woman_kickass.jpg', alt='Card image cap')
+  //-     .card-block
+  //-       p.card-text
+  //-         | Some quick example text to build on the card title and make up the bulk of the card's content.
+  //-       .card-title
+  //-         i.fa.fa-heart-o(aria-hidden='true')
+  //-         button(type="button",class="btn-comment",onclick="commentboxshow()")
+  //-           i.fa.fa-comment-o(aria-hidden='true')
+  //-       .targ
+  //-         form(method="#" class="form-text")
+  //-           .form-group
+  //-             textarea(rows="15",cols="45",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
   //- if post
   each post in posts
     div.container.d-flex.justify-content-center
@@ -35,8 +35,11 @@ block content
           i.fa.fa-heart-o(aria-hidden='true')
           button(type="button",class="btn-comment",onclick="commentboxshow()")
             i.fa.fa-comment-o(aria-hidden='true')
+        .card-footer
+          p dimelo  
+
         .targ    
           form(method="post" class="form-text")
             .form-group
-              textarea(rows="15",cols="45",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
-      
+              textarea(rows="15",cols="48",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
+        

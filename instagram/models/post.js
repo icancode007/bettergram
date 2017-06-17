@@ -19,6 +19,20 @@ module.exports = function(sequelize, DataTypes) {
       classMethods:{
           associate: function(models){
             models.post.belongsTo(models.user);
+            models.post.hasMany(models.comment)
+          },findwithPost: function(post){
+              return(this.findOne({
+                  where: {
+						post: post
+					},
+					include: [
+						sequelize.models.user,
+						sequelize.models.comment
+					],
+					order: [
+						[sequelize.models.comment, 'createdAt', 'DESC']
+                    ]
+              }));
           }
     }
 	}));
