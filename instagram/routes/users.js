@@ -11,6 +11,7 @@ var cloudinary = require('cloudinary');
 var s3 = new aws.S3({region:'us-east-1'})
 var router = express.Router();
 
+//In the post table find all the post and the user they belong to
 router.get('/', function(req, res) {
     Post.findAll({
 		include: User
@@ -18,18 +19,7 @@ router.get('/', function(req, res) {
 		res.render('users', {
 			posts: posts
 		});
-});
-    //  User.findWithUsername(req.user.username).then(function(user){
-
-    //     }).then(function(user){
-    //         User.findAll().then(function(users){
-    //             res.render('users',{
-    //                 users: users,
-    //                 user: user,
-    //                 post:{}
-    //             });
-    //         })
-    //     })
+    });
 })
 //     User.findWithUsername(req.user.username).then(function(user){
 //            res.render('users',{
