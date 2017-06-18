@@ -18,7 +18,7 @@ module.exports = {
           key:   'id'
         }
       },
-      comments: {
+      comment: {
         type:      Sequelize.TEXT,
         allowNull: false,
       }

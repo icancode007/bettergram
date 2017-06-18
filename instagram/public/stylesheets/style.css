@@ -107,6 +107,12 @@ button.signup-button {
     -webkit-appearance: none;
     width: 100%;
 }
+#signup input{
+  margin-left: 40px;
+}
+#signin input{
+  margin-left: 40px;
+}
 
 .form.signup-form {
     text-align: center;
@@ -116,7 +122,7 @@ button.signup-button {
   width: 80%;
 }
 .form-group input{
-  margin-left: 40px;
+  margin-left: 3px;
 }
 .errorsList{
   list-style: none;
@@ -234,7 +240,7 @@ button:hover{
   margin-left: 165px;
 }
 
-#image-comment {
+.image-comment {
   background: 0 0;
   border: none;
   color: #262626;
@@ -244,6 +250,8 @@ button:hover{
   resize: none;
   max-height: 80px;
   background-color : #efefef;
+  width: 340px;
+  margin-left:-:;30px;
 }
 #postUpload label{
   font-size: 14px;
@@ -253,7 +261,7 @@ button:hover{
   font-size: 15px;  
 }
 .container{
-  margin-bottom: 200px;
+  margin-bottom: 250px;
   margin-top: 50px;
 }
 

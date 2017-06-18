@@ -4,7 +4,7 @@ block content
   .row.main-section.userprofile
     .col-md-4.d-flex.justify-content-end
       p 
-        img(src=user.imgThumb, id='profileicon')
+        img(src=currentUser.imgThumb, id='profileicon')
     .col-md-8
       .col-md-2.ordenado
         h3(class="Uname") #{currentUser.username} 
@@ -32,3 +32,19 @@ block content
                 button.btn.btn-default(type='button', data-dismiss='modal') Close
       .col-md-2.ordenado
         p #{currentUser.bio}    
+  .container.d-flex.justify-content-around
+    each post in user.posts
+      .col-md-4
+        .card
+          .card-header
+            div.d-flex.justify-content-start.align-items-center
+               p.user_name  #{currentUser.username}
+          img.card-img-top.image-responsive(src=post.imgUrl, alt='Card image cap')
+          .card-block
+            p.card-text
+            |#{post.post}
+          .card-title
+            i.fa.fa-heart-o(aria-hidden='true')
+            button(type="button",class="btn-comment",onclick="commentboxshow()")
+              i.fa.fa-comment-o(aria-hidden='true')
+          .card-footer

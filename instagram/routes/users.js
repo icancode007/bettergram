@@ -6,6 +6,7 @@ var aws = require('aws-sdk');
 var models = require('../models/index');
 var User = models.user;
 var Post = models.post;
+var Comment = models.comment;
 var uploadHandler= multer();
 var cloudinary = require('cloudinary');
 var s3 = new aws.S3({region:'us-east-1'})
@@ -20,16 +21,9 @@ router.get('/', function(req, res) {
 			posts: posts
 		});
     });
-})
-//     User.findWithUsername(req.user.username).then(function(user){
-//            res.render('users',{
-//                 user: user,
-//                 post:{}
-//          });
-//     });
-     
-// });
-
+});
+//first find the user making the request for the new post and then create the post based on that user
+//so that the post actually belongs to the current user making the post
 router.post('/',uploadHandler.single('image'),function(req,res){
       User.findWithUsername(req.user.username).then(function(user){
          user.createPost({
@@ -72,15 +66,22 @@ router.post('/',uploadHandler.single('image'),function(req,res){
     });  
 });
 
-router.get('/:username', function(req, res) {
-    User.findOne({
-        where: {
-            username: req.params.username
-        }
-    }).then(function(users) {
-        res.render('userprofile', {
-            user: users
+router.post('/comment',function(req,res){
+
+    Post.findById(req.body.postId).then(function(post){
+         post.createComment({
+            comment: req.body.comment
+        }).then(function(comment){
+            res.redirect('users')
         });
+    })   
+});
+router.get('/:username', function(req, res) {
+        User.findWithUsername(req.user.username).then(function(user){
+           res.render('userprofile',{
+                user: user,
+                posts:{}
+         });
     });
 });
 

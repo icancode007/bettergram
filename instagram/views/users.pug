@@ -39,7 +39,9 @@ block content
           p dimelo  
 
         .targ    
-          form(method="post" class="form-text")
+          form(action='/users/comment', method="post" class="form-text")
             .form-group
-              textarea(rows="15",cols="48",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
+              input(name='postId' value=post.id type='hidden')
+            .form-group
+              input(class="image-comment",style="height: 75px;",placeholder='Add a comment....', name='comment')
         
