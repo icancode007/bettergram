@@ -2,7 +2,7 @@
 
 module.exports = {
   up: function (queryInterface, Sequelize) {
-    return (queryInterface.createTable('comments', {
+    return (queryInterface.createTable('likes', {
       id: {
         type:          Sequelize.INTEGER,
         primaryKey:    true,
@@ -18,8 +18,18 @@ module.exports = {
           key:   'id'
         }
       },
-      comments: {
-        type:      Sequelize.TEXT,
+       userId: {
+        type:       Sequelize.INTEGER,
+        allowNull:  false,
+        onDelete:  'cascade',
+        references: {
+          model: 'users',
+          key:   'id'
+        }
+      }
+      ,
+      like: {
+        type:      Sequelize.INTEGER,
         allowNull: false,
       }
     }));

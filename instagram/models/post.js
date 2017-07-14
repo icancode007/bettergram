@@ -19,7 +19,8 @@ module.exports = function(sequelize, DataTypes) {
       classMethods:{
           associate: function(models){
             models.post.belongsTo(models.user);
-            models.post.hasMany(models.comment)
+            models.post.hasMany(models.comment);
+            models.post.hasMany(models.like);
           },findwithPost: function(post){
               return(this.findOne({
                   where: {

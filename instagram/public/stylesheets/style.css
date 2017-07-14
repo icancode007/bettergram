@@ -299,3 +299,11 @@ button:hover{
   font-size:25px;
   margin-left: 15px;
 }
+
+ .filtered{
+   filter:grayscale(100%);
+ }
+
+.on{
+   color: red; 
+}

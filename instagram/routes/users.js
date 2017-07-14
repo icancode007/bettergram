@@ -8,15 +8,15 @@ var User = models.user;
 var Post = models.post;
 var Comment = models.comment;
 var uploadHandler= multer();
-var cloudinary = require('cloudinary');
 var s3 = new aws.S3({region:'us-east-1'})
 var router = express.Router();
 
 //In the post table find all the post and the user they belong to
 router.get('/', function(req, res) {
     Post.findAll({
-		include: User
+		include: [User, Comment]
 	}).then(function(posts) {
+        console.log(posts);
 		res.render('users', {
 			posts: posts
 		});
@@ -70,9 +70,9 @@ router.post('/comment',function(req,res){
 
     Post.findById(req.body.postId).then(function(post){
          post.createComment({
-            comment: req.body.comment
+            comments: req.body.comment
         }).then(function(comment){
-            res.redirect('users')
+            res.redirect('/users')
         });
     })   
 });

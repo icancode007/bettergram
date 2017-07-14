@@ -19,8 +19,7 @@ block content
   //-         form(method="#" class="form-text")
   //-           .form-group
   //-             textarea(rows="15",cols="45",id="image-comment",style="height: 75px;",placeholder='Add a comment....')
-  //- if post
-  each post in posts
+  each post,index in posts
     div.container.d-flex.justify-content-center
       .card
         .card-header
@@ -32,13 +31,15 @@ block content
           p.card-text
           |#{post.post}
         .card-title
-          i.fa.fa-heart-o(aria-hidden='true')
-          button(type="button",class="btn-comment",onclick="commentboxshow()")
-            i.fa.fa-comment-o(aria-hidden='true')
+          i.fa.fa-heart-o(aria-hidden='true' clicke='false')
+          button(type="button",class="btn-comment")
+            i.fa.fa-comment-o(aria-hidden='true' class="post"+index)
         .card-footer
-          p dimelo  
+          each comment in post.comments
+            p   
+            |#{comment.comments} 
 
-        .targ    
+        div(class="targ "+ "post"+index)  
           form(action='/users/comment', method="post" class="form-text")
             .form-group
               input(name='postId' value=post.id type='hidden')
