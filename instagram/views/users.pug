@@ -31,13 +31,17 @@ block content
           p.card-text
           |#{post.post}
         .card-title
-          i.fa.fa-heart-o(aria-hidden='true' clicke='false')
+          form(action='/users/like',method='post' class='like-form '+'like-btnf'+index)
+            input(type='hidden' value=post.id name='postId')
+            button(type="submit" class="like-btn like-btnf"+index)
+              i.fa.fa-heart-o(aria-hidden='true' clicked='false' class='like-btn'+index+' '+(post.likes.some(like => like.userId == currentUser.id)? 'on': ""))
+              p= post.likes.length
           button(type="button",class="btn-comment")
             i.fa.fa-comment-o(aria-hidden='true' class="post"+index)
         .card-footer
           each comment in post.comments
             p   
-            |#{comment.comments} 
+            |-#{comment.comments} 
 
         div(class="targ "+ "post"+index)  
           form(action='/users/comment', method="post" class="form-text")

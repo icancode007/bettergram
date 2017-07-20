@@ -7,6 +7,7 @@ var models = require('../models/index');
 var User = models.user;
 var Post = models.post;
 var Comment = models.comment;
+var Like = models.like;
 var uploadHandler= multer();
 var s3 = new aws.S3({region:'us-east-1'})
 var router = express.Router();
@@ -14,9 +15,8 @@ var router = express.Router();
 //In the post table find all the post and the user they belong to
 router.get('/', function(req, res) {
     Post.findAll({
-		include: [User, Comment]
+		include: [User, Comment, Like]
 	}).then(function(posts) {
-        console.log(posts);
 		res.render('users', {
 			posts: posts
 		});
@@ -76,6 +76,41 @@ router.post('/comment',function(req,res){
         });
     })   
 });
+router.post('/like',function(req,res){
+    Post.findById(req.body.postId).then(function(post){
+        //get likes returns an array of elements 
+        post.getLikes({
+            where:{
+                userId:req.user.id
+            }
+        }).then(function(likes){
+            if(likes.length == 0){
+                post.createLike({
+                    userId: req.user.id
+                }).then(function(likes){
+                    res.redirect('/users')
+                });
+            }else{ 
+                likes.forEach(function(like) {
+                    like.destroy().then(function(){
+                        res.redirect('/users')
+                    })
+                })
+            }
+        }).catch(function(err){
+            console.log(err)
+        })   
+    })
+})
+// router.post('/like',function(req,res){
+//     Post.findById(JSON.parse(req.body.postId).id).then(function(post){
+//          post.createLike({
+//              userId: JSON.parse(req.body.postId).user
+//         }).then(function(likes){
+//             res.redirect('/users')
+//         });
+//     }) 
+// });
 router.get('/:username', function(req, res) {
         User.findWithUsername(req.user.username).then(function(user){
            res.render('userprofile',{

@@ -209,7 +209,7 @@ img.rounded-circle {
 .card-title{
   margin-bottom: 15px;
 }
-.btn-comment {
+.btn-comment,.like-btn{
      background-color:inherit;
      color:none;
      border: none;
@@ -219,7 +219,9 @@ img.rounded-circle {
 .btn-comment:focus {
    outline: 0;
 }
-
+.like-btn:focus{
+  outline: 0;
+}
 
 button:hover{
   cursor: pointer;
@@ -306,4 +308,7 @@ button:hover{
 
 .on{
    color: red; 
+}
+.like-form{
+  display: inline;
 }

@@ -1,10 +1,8 @@
-$('.fa-heart-o').click(
+$('.like-btn').click(
   function(event){
-    let clickVal = event.target.getAttribute('clicked');
-    heartSwitch(event.target.getAttribute('clicked'));
-    event.target.setAttribute('clicked',clickedValidator(clickVal));
+    let newVal = clickedValidator(event.target.getAttribute('clicked'))
+    event.target.setAttribute('clicked',newVal)
 
-    // event.target.setAttribute('count',keepCount(event.target.getAttribute('clicked'),countVal))
 })
 
  function clickedValidator(currentBool){
@@ -18,13 +16,4 @@ $('.fa-heart-o').click(
   return(currentBool)
 }
 
-function heartSwitch(currentBool){
-
-    if( currentBool == 'true'){
-      event.target.setAttribute('class','fa fa-heart-o on')
-    }
-    else{
-      event.target.setAttribute('class','fa fa-heart-o')
-    }
-}
 

@@ -1,9 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
 	return(sequelize.define('like', {
-		like:{
-            type: DataTypes.INTEGER,
-            allowNull:false
-        }
       }
 	,{ 
     defaultScope: {

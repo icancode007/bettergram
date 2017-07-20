@@ -27,11 +27,6 @@ module.exports = {
           key:   'id'
         }
       }
-      ,
-      like: {
-        type:      Sequelize.INTEGER,
-        allowNull: false,
-      }
     }));
   },
   down: function(queryInterface, Sequelize) {
