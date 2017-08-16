@@ -12,6 +12,18 @@ html, body {
   color: #003569;
   text-decoration: none;
 }
+.smallLogout{
+  font-size: 14px;
+  font-weight: bold;
+}
+/* .showLogout{
+  font-size: 14px;
+  font-weight: bold;
+  display:none
+} */
+.smallLogout:hover {
+  color:red
+}
 
 .footer {
   margin-top: 50px;
@@ -155,9 +167,11 @@ button.signup-button {
   margin-right:5px;
 }
 #search-i{
+  display: none;
   position: relative;
 }
 #search-i .fa-search{
+  display: none;
   color:#656;
   font-size: 15px;
   top:8px;
@@ -165,6 +179,7 @@ button.signup-button {
   position: absolute;
 }
 #search-input{
+  display: none;
   padding-left: 20px;
 }
 

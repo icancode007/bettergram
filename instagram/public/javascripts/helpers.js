@@ -1,4 +1,5 @@
 $('.targ').hide();
+$(".smallLogout").hide()
 
 $('#search-input').focus(function(){
   var hey = $(".fa-search");
@@ -19,9 +20,19 @@ $('.btn-comment').click(
 $("#textarea").focus(function(){
   var text = $("#textarea").val("");
 })
-
-
-
+$('.userlink').mouseenter(
+  function() {
+    $(".smallLogout").show()
+    setTimeout(function() {
+      $(".smallLogout").hide()      
+    }, 2000);
+  }
+);
+$('.userlink').click(
+  function() {
+    $(".smallLogout").hide()
+  }
+);
 // $(document).ready(function(){
 //   $('.image-comment').keypress(function(e){
 //     if(e.which == 13){

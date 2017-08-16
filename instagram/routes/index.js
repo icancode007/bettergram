@@ -73,4 +73,10 @@ router.get('/signin',function(req, res, next){
 router.post('/signin', passport.authenticate('local'), function(req,res) {
   res.redirect('/users');
 });
+
+router.get('/log-out', function(request, response) {
+	request.logout();
+	response.redirect('/');
+});
+
 module.exports = router;
